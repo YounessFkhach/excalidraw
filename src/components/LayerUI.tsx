@@ -110,7 +110,13 @@ export const LayerUI = React.memo(
         <FixedSideContainer side="top">
           <HintViewer appState={appState} elements={elements} />
           <div className="App-menu App-menu_top">
-            <Stack.Col gap={4}>
+            <Stack.Col
+              gap={4}
+              style={{
+                height: "calc(100vh - 60px)",
+                gridAutoRows: "auto",
+              }}
+            >
               <Section className="App-right-menu" heading="canvasActions">
                 <Island padding={4}>
                   <Stack.Col gap={4}>
@@ -134,6 +140,9 @@ export const LayerUI = React.memo(
                 <Section
                   className="App-right-menu"
                   heading="selectedShapeActions"
+                  style={{
+                    overflowY: "auto",
+                  }}
                 >
                   <Island padding={4}>
                     <SelectedShapeActions

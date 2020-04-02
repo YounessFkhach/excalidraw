@@ -7,6 +7,7 @@ type StackProps = {
   gap?: number;
   align?: "start" | "center" | "end" | "baseline";
   justifyContent?: "center" | "space-around" | "space-between";
+  style?: object;
 };
 
 function RowStack({ children, gap, align, justifyContent }: StackProps) {
@@ -26,7 +27,7 @@ function RowStack({ children, gap, align, justifyContent }: StackProps) {
   );
 }
 
-function ColStack({ children, gap, align, justifyContent }: StackProps) {
+function ColStack({ children, gap, align, justifyContent, style }: StackProps) {
   return (
     <div
       className="Stack Stack_vertical"
@@ -35,6 +36,7 @@ function ColStack({ children, gap, align, justifyContent }: StackProps) {
           "--gap": gap,
           justifyItems: align,
           justifyContent,
+          ...style,
         } as React.CSSProperties
       }
     >
